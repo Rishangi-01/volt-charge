@@ -96,7 +96,7 @@ export default function TestimonialsSection() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{
               duration: 0.8,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
             }}
             className="relative z-10 pt-0 lg:pt-0"
           >
@@ -143,7 +143,7 @@ export default function TestimonialsSection() {
             transition={{
               duration: 0.9,
               delay: 0.15,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
             }}
             className="relative z-20 w-full lg:-mb-[90px]"
           >

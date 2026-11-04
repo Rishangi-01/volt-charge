@@ -78,7 +78,7 @@ export default function TeamSection() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{
             duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="mb-10 text-center sm:mb-12 lg:mb-14"
         >

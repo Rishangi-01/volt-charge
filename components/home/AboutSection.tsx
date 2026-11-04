@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Target, Zap } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,8 +33,13 @@ const missionSlides = [
 
 const AboutSection = () => {
   const shouldReduceMotion = useReducedMotion();
+  const [isMounted, setIsMounted] = useState(false);
   const [activeMissionSlide, setActiveMissionSlide] = useState(0);
   const [missionSwiper, setMissionSwiper] = useState<SwiperInstance | null>(null);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const fadeUp = {
     hidden: { opacity: 0, y: 35 },
@@ -138,7 +143,7 @@ const AboutSection = () => {
               transition={{
                 duration: 0.9,
                 delay: 0.35,
-                ease: [0.22, 1, 0.36, 1],
+                ease: [0.22, 1, 0.36, 1] as const,
               }}
               whileHover={
                 shouldReduceMotion ? {} : { y: -8 }
@@ -149,72 +154,94 @@ const AboutSection = () => {
               <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#8cff40]/20 blur-3xl" />
 
               <div className="relative z-10">
-                <Swiper
-                  modules={[A11y, Autoplay]}
-                  autoplay={
-                    shouldReduceMotion
-                      ? false
-                      : { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true }
-                  }
-                  loop
-                  speed={650}
-                  onSwiper={setMissionSwiper}
-                  onSlideChange={(swiper) =>
-                    setActiveMissionSlide(swiper.realIndex)
-                  }
-                  className="text-center"
-                >
-                  {missionSlides.map(({ title, description, icon: Icon }) => (
-                    <SwiperSlide key={title}>
-                      <div className="flex min-h-[230px] flex-col items-center justify-center">
-                        <motion.div
-                          animate={
-                            shouldReduceMotion
-                              ? {}
-                              : { rotate: [0, -5, 5, 0] }
-                          }
-                          transition={{
-                            duration: 5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                          }}
-                          className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/10"
-                        >
-                          <Icon size={45} strokeWidth={1.8} />
-                        </motion.div>
+                {isMounted ? (
+                  <>
+                    <Swiper
+                      modules={[A11y, Autoplay]}
+                      autoplay={
+                        shouldReduceMotion
+                          ? false
+                          : {
+                              delay: 3500,
+                              disableOnInteraction: false,
+                              pauseOnMouseEnter: true,
+                            }
+                      }
+                      loop
+                      speed={650}
+                      onSwiper={setMissionSwiper}
+                      onSlideChange={(swiper) =>
+                        setActiveMissionSlide(swiper.realIndex)
+                      }
+                      className="text-center"
+                    >
+                      {missionSlides.map(({ title, description, icon: Icon }) => (
+                        <SwiperSlide key={title}>
+                          <div className="flex min-h-[230px] flex-col items-center justify-center">
+                            <motion.div
+                              animate={
+                                shouldReduceMotion
+                                  ? {}
+                                  : { rotate: [0, -5, 5, 0] }
+                              }
+                              transition={{
+                                duration: 5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                              }}
+                              className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/10"
+                            >
+                              <Icon size={45} strokeWidth={1.8} />
+                            </motion.div>
 
-                        <h3 className="text-2xl font-bold tracking-tight sm:text-[30px]">
-                          {title}
-                        </h3>
+                            <h3 className="text-2xl font-bold tracking-tight sm:text-[30px]">
+                              {title}
+                            </h3>
 
-                        <p className="mt-3 max-w-[280px] text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
-                          {description}
-                        </p>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+                            <p className="mt-3 max-w-[280px] text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+                              {description}
+                            </p>
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
 
-                <div
-                  role="group"
-                  className="mt-7 flex justify-center gap-2"
-                  aria-label="Mission messages"
-                >
-                  {missionSlides.map((slide, index) => (
-                    <button
-                      key={slide.title}
-                      type="button"
-                      aria-label={`Show ${slide.title}`}
-                      aria-current={activeMissionSlide === index ? "true" : undefined}
-                      onClick={() => missionSwiper?.slideToLoop(index)}
-                      className={`h-[4px] w-10 rounded-full transition-colors ${
-                        activeMissionSlide === index
-                          ? "bg-[#69ed45]"
-                          : "bg-white"
-                      }`}
-                    />
-                  ))}
-                </div>
+                    <div
+                      role="group"
+                      className="mt-7 flex justify-center gap-2"
+                      aria-label="Mission messages"
+                    >
+                      {missionSlides.map((slide, index) => (
+                        <button
+                          key={slide.title}
+                          type="button"
+                          aria-label={`Show ${slide.title}`}
+                          aria-current={activeMissionSlide === index ? "true" : undefined}
+                          onClick={() => missionSwiper?.slideToLoop(index)}
+                          className={`h-[4px] w-10 rounded-full transition-colors ${
+                            activeMissionSlide === index
+                              ? "bg-[#69ed45]"
+                              : "bg-white"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex min-h-[230px] flex-col items-center justify-center">
+                    <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/10">
+                      <Target size={45} strokeWidth={1.8} />
+                    </div>
+
+                    <h3 className="text-2xl font-bold tracking-tight sm:text-[30px]">
+                      {missionSlides[0].title}
+                    </h3>
+
+                    <p className="mt-3 max-w-[280px] text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+                      {missionSlides[0].description}
+                    </p>
+                  </div>
+                )}
               </div>
 
 

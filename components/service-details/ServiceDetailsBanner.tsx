@@ -37,7 +37,7 @@ export default function ServiceDetailsBanner({
         animate={{ scale: 1 }}
         transition={{
           duration: 1.5,
-          ease: [0.22, 1, 0.36, 1],
+          ease: [0.22, 1, 0.36, 1] as const,
         }}
         className="absolute inset-0 -z-10"
       >
@@ -66,7 +66,7 @@ export default function ServiceDetailsBanner({
           transition={{
             duration: 0.9,
             delay: 0.2,
-            ease: [0.22, 1, 0.36, 1],
+            ease: [0.22, 1, 0.36, 1] as const,
           }}
           className="max-w-[650px]"
         >

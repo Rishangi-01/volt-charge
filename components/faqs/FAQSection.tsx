@@ -262,7 +262,7 @@ export default function FAQSection() {
                       }}
                       transition={{
                         duration: reduceMotion ? 0 : 0.35,
-                        ease: [0.22, 1, 0.36, 1],
+                        ease: [0.22, 1, 0.36, 1] as const,
                       }}
                       className="overflow-hidden"
                     >
