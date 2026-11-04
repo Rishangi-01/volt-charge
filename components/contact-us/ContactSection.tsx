@@ -17,27 +17,28 @@ import {
   ArrowRight,
   RotateCcw,
 } from "lucide-react";
+import { site } from "@/data/index";
 
 const contactInfo = [
   {
     id: 1,
     title: "Have any questions?",
-    value: "+1 000000000",
-    href: "tel:+1 000000000",
+    value: site.site.phones[0],
+    href: `tel:${site.site.phones[0]}`,
     icon: Phone,
   },
   {
     id: 2,
     title: "Write email",
-    value: "info@xyz.com",
-    href: "mailto:info@xyz.com",
+    value: site.site.emails[0],
+    href: `mailto:${site.site.emails[0]}`,
     icon: Mail,
   },
   {
     id: 3,
     title: "Visit anytime",
-    value: "123 Design Avenue, New York, NY 10001, USA",
-    href: "https://maps.google.com/?q=123+Design+Avenue+New+York",
+    value: site.site.addressLines.join(", "),
+    href: `https://maps.google.com/?q=${encodeURIComponent(site.site.addressLines.join(", "))}`,
     icon: MapPin,
   },
 ];
@@ -126,7 +127,7 @@ export default function ContactSection() {
 
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-green-100/40 blur-[140px]" />
 
-      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-12 xl:px-16">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
 
         <motion.div
@@ -143,7 +144,7 @@ export default function ContactSection() {
             <span className="h-[4px] w-10 rounded-full bg-[#278d19] sm:w-14" />
 
             <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-[#172033] sm:text-lg">
-              Contact Us
+              {site.contact.eyebrow}
             </span>
 
             <span className="h-[4px] w-10 rounded-full bg-[#278d19] sm:w-14" />
@@ -154,9 +155,9 @@ export default function ContactSection() {
             variants={fadeUp}
             className="text-4xl font-extrabold leading-[1.1] tracking-tight text-[#111827] sm:text-5xl md:text-6xl lg:text-7xl xl:text-6xl"
           >
-            Get in Touch{" "}
+            {site.contact.title[0]}{" "}
             <span className="bg-gradient-to-r from-[#269b13] to-[#16800b] bg-clip-text text-transparent">
-              with Us
+              {site.contact.title[1] || site.contact.highlight}
             </span>
           </motion.h2>
 
@@ -165,9 +166,7 @@ export default function ContactSection() {
             variants={fadeUp}
             className="mx-auto mt-2 max-w-3xl text-base leading-relaxed text-[#475166] sm:text-lg lg:text-lg"
           >
-            Have questions about our charging stations, services or
-            partnership opportunities? We're here to help. Reach
-            out to our team and we'll get back to you shortly.
+            {site.contact.text}
           </motion.p>
 
 

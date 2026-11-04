@@ -89,7 +89,7 @@ export default function WhyChooseUs() {
       
       <div className="pointer-events-none absolute left-1/2 top-40 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-green-100/30 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
       
         <motion.div

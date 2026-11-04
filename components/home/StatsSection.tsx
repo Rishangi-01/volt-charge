@@ -136,7 +136,7 @@ export default function StatsSection() {
     >
       <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-[70%] -translate-x-1/2 rounded-full" />
 
-      <div className="relative mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
         <motion.div
           variants={containerVariants}

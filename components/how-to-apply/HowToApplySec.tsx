@@ -4,41 +4,15 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Zap, ArrowRight } from "lucide-react";
+import { site } from "@/data/index";
 
-const steps = [
-  {
-    number: "01",
-    title: "Application",
-    description:
-      "Submit your online application with basic details, location and your charging requirements.",
-    image: "/images/home/application.png",
-    imageAlt: "Applying for an EV charging station online",
-  },
-  {
-    number: "02",
-    title: "Approval",
-    description:
-      "Our team reviews your application, verifies the details and confirms your eligibility.",
-    image: "/images/home/approval.png",
-    imageAlt: "EV charging station application approval",
-  },
-  {
-    number: "03",
-    title: "Site Assessment",
-    description:
-      "We visit your location to assess space, power availability, safety and installation feasibility.",
-    image: "/images/home/site-assessment.png",
-    imageAlt: "EV charging station site assessment",
-  },
-  {
-    number: "04",
-    title: "Installation",
-    description:
-      "Our experts install, test and activate your EV charging station, so it's ready for use.",
-    image: "/images/home/installation.png",
-    imageAlt: "EV charging station installation",
-  },
-];
+const steps = site.process.steps.map((step, index) => ({
+  number: String(index + 1).padStart(2, "0"),
+  title: step.title,
+  description: step.text,
+  image: "/images/home/installation.png",
+  imageAlt: step.title,
+}));
 
 const containerVariants = {
   hidden: {},
@@ -77,7 +51,7 @@ export default function HowToApplySec() {
 
       <div className="pointer-events-none absolute -right-40 bottom-20 h-80 w-80 rounded-full bg-lime-100/40 blur-[110px]" />
 
-      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
 
         <motion.div
@@ -99,7 +73,7 @@ export default function HowToApplySec() {
               />
 
               <span className="text-sm font-bold text-[#111827] sm:text-base">
-                How to Apply
+                {site.process.eyebrow}
               </span>
             </div>
 
@@ -108,16 +82,15 @@ export default function HowToApplySec() {
 
 
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-4xl md:text-[46px] lg:text-[50px]">
-            Set Up an{" "}
+            {site.process.title}{" "}
             <span className="bg-gradient-to-r from-[#6bc51c] via-[#3caa16] to-[#16851c] bg-clip-text text-transparent">
-              EV Charging Station
+              {site.process.highlight}
             </span>
           </h2>
 
 
           <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-[#525b6b] sm:text-base md:text-lg">
-            A simple, transparent and quick process to get your
-            charging station up and running.
+            {site.process.text}
           </p>
 
 

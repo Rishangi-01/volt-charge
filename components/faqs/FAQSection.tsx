@@ -8,81 +8,13 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
+import { site } from "@/data/index";
 
-const faqs = [
-  {
-    id: 1,
-    question: "How does the charging process work?",
-    answer:
-      "Simply connect your electric vehicle to the charging station, follow the instructions on the charger or mobile application, and start charging. Once charging is complete, disconnect your vehicle safely.",
-  },
-  {
-    id: 2,
-    question: "Are there different charging speeds available?",
-    answer:
-      "Yes. We support different charging speeds, including AC slow charging, AC fast charging and DC fast charging, depending on your vehicle and charging requirements.",
-  },
-  {
-    id: 3,
-    question: "How do I find the nearest charging station?",
-    answer:
-      "You can locate nearby charging stations through our digital platform. Explore available stations, check their locations and find convenient charging points.",
-  },
-  {
-    id: 4,
-    question: "What payment methods are accepted?",
-    answer:
-      "Payment options may include UPI, debit cards, credit cards, net banking and supported digital payment methods, depending on the charging network.",
-  },
-  {
-    id: 5,
-    question: "Can I charge multiple vehicles simultaneously?",
-    answer:
-      "Yes. Selected charging stations support multiple vehicles simultaneously. The availability depends on the number of charging connectors and the station's power capacity.",
-  },
-  {
-    id: 6,
-    question: "What types of connectors are supported?",
-    answer:
-      "Connector compatibility depends on the charging equipment and vehicle. Common connector standards include Type 2, CCS2 and other supported EV charging connectors.",
-  },
-  {
-    id: 7,
-    question: "What are the different types of chargers available?",
-    answer:
-      "EV chargers generally include AC chargers for everyday charging and DC fast chargers for quicker charging. We help you select the right solution for your requirements.",
-  },
-  {
-    id: 8,
-    question: "How much does it cost to use a charging station?",
-    answer:
-      "Charging costs vary depending on the station, charging speed, electricity tariff and energy consumed. Please check the applicable pricing before starting a session.",
-  },
-  {
-    id: 9,
-    question: "Do I need a special app to start charging?",
-    answer:
-      "Requirements vary by charging network. Some stations support app-based charging, while others may offer alternative activation methods.",
-  },
-  {
-    id: 10,
-    question: "Is the charging station compatible with my EV?",
-    answer:
-      "Most modern EVs can use compatible charging stations. Before charging, check your vehicle's connector type, charging capacity and supported charging standards.",
-  },
-  {
-    id: 11,
-    question: "Is there a membership or subscription required?",
-    answer:
-      "Membership requirements depend on the charging network. Some stations offer pay-as-you-go charging, while others may provide subscription-based plans.",
-  },
-  {
-    id: 12,
-    question: "What should I do if I face an issue while charging?",
-    answer:
-      "First, check the charger display and vehicle connection. If the issue continues, contact our support team with your charging station details for assistance.",
-  },
-];
+const faqs = site.faq.items.map((item, index) => ({
+  id: index + 1,
+  question: item.question,
+  answer: item.answer,
+}));
 
 const containerVariants = {
   hidden: {},
@@ -125,7 +57,7 @@ export default function FAQSection() {
 
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-green-100/40 blur-[130px]" />
 
-      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-12 xl:px-16">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 25 }}
@@ -139,7 +71,7 @@ export default function FAQSection() {
             <span className="h-[3px] w-10 rounded-full bg-[#278d19] sm:w-12" />
 
             <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-[#172033] sm:text-base">
-              Faq&apos;s
+              {site.faq.title}
             </span>
 
             <span className="h-[3px] w-10 rounded-full bg-[#278d19] sm:w-12" />
@@ -150,11 +82,12 @@ export default function FAQSection() {
             id="faq-heading"
             className="mx-auto max-w-5xl text-3xl font-extrabold leading-[1.15] tracking-tight text-[#111827] sm:text-4xl md:text-5xl lg:text-6xl xl:text-[68px]"
           >
-            Frequently Asked{" "}
-            <span className="text-[#248d19]">
-              Questions
-            </span>
+            {site.faq.title}
           </h2>
+
+          <p className="mx-auto mt-4 max-w-3xl text-base text-[#475166] sm:text-lg">
+            {site.faq.intro}
+          </p>
 
           <motion.div
             initial={{ width: 0 }}

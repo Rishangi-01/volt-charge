@@ -12,51 +12,24 @@ import {
   Settings,
   ArrowUpRight,
 } from "lucide-react";
+import { site } from "@/data/index";
 
-const services = [
-  {
-    id: 1,
-    title: "Fast EV Charging",
-    image: "/images/home/fast-charging.png",
-    icon: Zap,
-    position: "lg:mt-0",
-  },
-  {
-    id: 2,
-    title: "AC Charging",
-    image: "/images/home/ac-charging.png",
-    icon: Plug,
-    position: "lg:mt-[90px]",
-  },
-  {
-    id: 3,
-    title: "DC Charging",
-    image: "/images/home/dc-charging.png",
-    icon: BatteryCharging,
-    position: "lg:mt-[180px]",
-  },
-  {
-    id: 4,
-    title: "Home Charger Installation",
-    image: "/images/home/home-installation.png",
-    icon: Wrench,
-    position: "lg:-mt-[0px]",
-  },
-  {
-    id: 5,
-    title: "Commercial Charging Solutions",
-    image: "/images/home/commercial-charging.png",
-    icon: Building2,
-    position: "lg:mt-[90px]",
-  },
-  {
-    id: 6,
-    title: "Charging Station Maintenance",
-    image: "/images/home/maintenance.png",
-    icon: Settings,
-    position: "lg:mt-[180px]",
-  },
-];
+const serviceIconMap = {
+  zap: Zap,
+  plug: Plug,
+  "battery-charging": BatteryCharging,
+  wrench: Wrench,
+  "building-2": Building2,
+  settings: Settings,
+};
+
+const services = site.plans.items.map((service, index) => ({
+  id: index + 1,
+  title: service.title,
+  image: service.homeImage || service.image,
+  icon: serviceIconMap[service.homeIcon as keyof typeof serviceIconMap] ?? Zap,
+  position: ["lg:mt-0", "lg:mt-[90px]", "lg:mt-[180px]"][index % 3] ?? "lg:mt-0",
+}));
 
 export default function ServicesSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -95,7 +68,7 @@ export default function ServicesSection() {
       <div className="pointer-events-none absolute -left-40 top-40 h-80 w-80 rounded-full bg-green-100/50 blur-[100px]" />
       <div className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-lime-100/40 blur-[110px]" />
 
-      <div className="relative z-10 mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -114,22 +87,19 @@ export default function ServicesSection() {
             />
 
             <span className="text-base font-bold text-[#078c35] sm:text-lg">
-              Our Services
+              {site.plans.eyebrow}
             </span>
 
             <span className="h-[2px] w-8 rounded-full bg-[#078c35]" />
           </div>
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#111827] sm:text-4xl md:text-5xl">
-            EV Charging{" "}
-            <span className="text-[#168c18]">
-              Services
-            </span>
+            {site.plans.title}{" "}
+            <span className="text-[#168c18]">{site.plans.highlight}</span>
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#656b73] sm:text-base md:text-lg">
-            End-to-end EV charging solutions for homes,
-            businesses and public spaces.
+            {site.plans.text}
           </p>
 
           <motion.div

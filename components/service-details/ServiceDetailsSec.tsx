@@ -15,200 +15,33 @@ import {
   Phone,
   BatteryCharging,
 } from "lucide-react";
+import { site } from "@/data/index";
 
-const services = [
-  {
-    id: 1,
-    name: "EV Charging Setup",
-    icon: BatteryCharging,
-    title: "EV Charging Setup",
-    subtitle: "Complete EV charging setup solutions for homes and businesses.",
-    image: "/images/home/charging-setup.png",
+const serviceIconMap = {
+  zap: BatteryCharging,
+  plug: Zap,
+  "battery-charging": BatteryCharging,
+  wrench: Settings,
+  "building-2": Network,
+  settings: Settings,
+};
 
-    overviewTitle: "Charging Setup Overview",
-    overview:
-      "We provide complete EV charging setup solutions designed around your requirements. From initial consultation to installation, our team ensures a smooth, efficient and reliable charging experience.",
-
-    centerTitle: "Complete Setup Solutions",
-    center:
-      "Our experts help you select the right charging equipment, plan installation locations and configure your charging infrastructure for reliable everyday performance.",
-
-    features: [
-      {
-        title: "Professional Installation",
-        description:
-          "Reliable installation with carefully planned charging points.",
-        image: "/images/home/station-layout.png",
-      },
-      {
-        title: "Smart Charging Setup",
-        description:
-          "Modern charging solutions designed for everyday convenience.",
-        image: "/images/home/scalable-solutions.png",
-      },
-    ],
-  },
-
-  {
-    id: 2,
-    name: "Charging Station Design",
-    icon: BatteryCharging,
-    title: "Charging Station Design",
-    subtitle:
-      "End-to-end design solutions for efficient, scalable and future-ready EV charging stations.",
-    image: "/images/home/installation.png",
-
-    overviewTitle: "Service Overview",
-    overview:
-      "Our Charging Station Design service focuses on creating smart, efficient and user-friendly charging infrastructure. We design customized solutions based on your location, user demand and scalability requirements, ensuring optimal performance, safety and a seamless charging experience.",
-
-    centerTitle: "Service Center",
-    center:
-      "We provide complete design and planning support for individual, commercial and large-scale charging networks. From layout planning to equipment selection and technical design, our experts ensure a reliable, future-ready and cost-effective charging setup.",
-
-    features: [
-      {
-        title: "Custom Station Layouts",
-        description:
-          "Optimized designs for maximum efficiency and user convenience.",
-        image: "/images/home/ac-charging.png",
-      },
-      {
-        title: "Smart & Scalable Solutions",
-        description: "Flexible designs that grow with your charging needs.",
-        image: "/images/home/dc-charging.png",
-      },
-    ],
-  },
-
-  {
-    id: 3,
-    name: "EV Website Development",
-    icon: Monitor,
-    title: "EV Website Development",
-    subtitle:
-      "Powerful digital experiences for EV charging businesses and networks.",
-    image: "/images/home/fast-charging.png",
-
-    overviewTitle: "Website Development Overview",
-    overview:
-      "We create modern, responsive and user-friendly websites for EV businesses. Our digital solutions help customers discover charging stations, explore services and connect with your charging network.",
-
-    centerTitle: "Digital Solutions",
-    center:
-      "From business websites to charging station dashboards, we build scalable digital platforms with modern interfaces, intuitive navigation and reliable performance.",
-
-    features: [
-      {
-        title: "Modern Web Experiences",
-        description:
-          "Beautiful, responsive websites for your EV charging business.",
-        image: "/images/home/home-installation.png",
-      },
-      {
-        title: "Smart Digital Platforms",
-        description: "Scalable digital solutions for growing EV networks.",
-        image: "/images/home/maintenance.png",
-      },
-    ],
-  },
-
-  {
-    id: 4,
-    name: "EC Solutions",
-    icon: Settings,
-    title: "EC Solutions",
-    subtitle:
-      "Intelligent electric charging solutions built for modern mobility.",
-    image: "/images/home/commercial-charging.png",
-
-    overviewTitle: "EC Solutions Overview",
-    overview:
-      "Our EC solutions focus on delivering efficient, dependable and user-friendly electric charging experiences. We combine modern technology with practical infrastructure planning.",
-
-    centerTitle: "Advanced Charging Support",
-    center:
-      "Our team helps businesses identify suitable charging technologies, plan their requirements and implement efficient electric charging solutions.",
-
-    features: [
-      {
-        title: "Advanced Technology",
-        description: "Modern charging technology for dependable performance.",
-        image: "/images/home/site-assessment.png",
-      },
-      {
-        title: "Efficient Operations",
-        description: "Thoughtfully designed solutions for smoother operations.",
-        image: "/images/home/scalable-solutions.png",
-      },
-    ],
-  },
-
-  {
-    id: 5,
-    name: "EV Infrastructure",
-    icon: Network,
-    title: "EV Infrastructure",
-    subtitle: "Building dependable EV infrastructure for a connected future.",
-    image: "/images/home/charging-setup.png",
-
-    overviewTitle: "Infrastructure Overview",
-    overview:
-      "We help develop reliable EV charging infrastructure for residential, commercial and public environments. Our solutions focus on accessibility, performance and long-term scalability.",
-
-    centerTitle: "Infrastructure Planning",
-    center:
-      "From site assessment and equipment planning to network expansion, we help create charging infrastructure that supports evolving mobility requirements.",
-
-    features: [
-      {
-        title: "Connected Networks",
-        description:
-          "Create accessible charging networks across multiple locations.",
-        image: "/images/home/station-layout.png",
-      },
-      {
-        title: "Future-Ready Infrastructure",
-        description:
-          "Build flexible infrastructure for future EV requirements.",
-        image: "/images/home/scalable-solutions.png",
-      },
-    ],
-  },
-
-  {
-    id: 6,
-    name: "G2G Solutions",
-    icon: Leaf,
-    title: "G2G Solutions",
-    subtitle:
-      "Sustainable and innovative solutions supporting greener mobility.",
-    image: "/images/home/commercial-charging.png",
-
-    overviewTitle: "G2G Solutions Overview",
-    overview:
-      "We support sustainable mobility through thoughtfully planned green energy and EV charging solutions. Our approach focuses on improving efficiency and supporting a cleaner transportation ecosystem.",
-
-    centerTitle: "Green Energy Solutions",
-    center:
-      "We explore efficient energy integration and sustainable infrastructure strategies to help businesses move towards cleaner and smarter mobility.",
-
-    features: [
-      {
-        title: "Sustainable Charging",
-        description:
-          "Environment-conscious charging solutions for modern mobility.",
-        image: "/images/home/dc-charging.png",
-      },
-      {
-        title: "Green Energy Integration",
-        description:
-          "Explore smarter energy solutions for future-ready networks.",
-        image: "/images/home/ev-charger-detail.png",
-      },
-    ],
-  },
-];
+const services = site.plans.items.map((service, index) => ({
+  id: index + 1,
+  name: service.title,
+  icon: serviceIconMap[service.homeIcon as keyof typeof serviceIconMap] ?? BatteryCharging,
+  title: service.title,
+  subtitle: service.text,
+  image: service.homeImage || service.image,
+  overviewTitle: service.title,
+  overview: service.overview[0] ?? service.text,
+  centerTitle: "Charging Solutions",
+  center: service.overview[1] ?? service.text,
+  features: [
+    { title: service.title, description: service.text, image: service.homeImage || service.image },
+    { title: "Service Details", description: service.text, image: service.homeImage || service.image },
+  ],
+}));
 
 const fadeUp = {
   hidden: { opacity: 0, y: 25 },
@@ -231,9 +64,8 @@ export default function ServiceDetailsSec() {
 
   return (
     <section className="relative w-full bg-white py-20 sm:py-24 lg:py-32">
-      <div className="pointer-events-none absolute -right-40 top-20 h-[450px] w-[450px] rounded-full bg-green-100/30 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16 xl:grid-cols-[330px_minmax(0,1fr)] xl:gap-20">
           <aside className="flex w-full flex-col gap-8 lg:sticky lg:top-24 lg:z-10 lg:max-w-[330px] lg:self-start xl:max-w-[360px]">
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-1 lg:gap-4">

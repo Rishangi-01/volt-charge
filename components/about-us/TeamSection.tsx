@@ -4,33 +4,14 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Zap } from "lucide-react";
+import { site } from "@/data/index";
 
-const teamMembers = [
-  {
-    id: 1,
-    name: "Michael Scott",
-    role: "Co-Founder, Chief Architect",
-    image: "/images/profile/michael.png",
-  },
-  {
-    id: 2,
-    name: "Chandler Rigs",
-    role: "Co-Founder, Architect",
-    image: "/images/profile/chandler.png",
-  },
-  {
-    id: 3,
-    name: "Isabella Rodriguez",
-    role: "Architect",
-    image: "/images/profile/isabella.png",
-  },
-  {
-    id: 4,
-    name: "Ava Wilson",
-    role: "3D Artist",
-    image: "/images/profile/ava.png",
-  },
-];
+const teamMembers = site.team.members.map((member, index) => ({
+  id: index + 1,
+  name: member.name,
+  role: member.role,
+  image: member.image,
+}));
 
 export default function TeamSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -65,7 +46,7 @@ export default function TeamSection() {
       
       <div className="pointer-events-none absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-green-100/30 blur-[100px]" />
 
-      <div className="relative mx-auto max-w-[1350px] px-5 sm:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
         
         <motion.div
@@ -96,7 +77,7 @@ export default function TeamSection() {
               />
 
               <span className="text-sm font-bold uppercase tracking-[0.13em] text-[#101828] sm:text-base">
-                Our Team
+                {site.team.eyebrow}
               </span>
             </div>
 
@@ -107,17 +88,13 @@ export default function TeamSection() {
 
           <h2 className="text-3xl font-extrabold tracking-tight text-[#101828] sm:text-4xl md:text-5xl lg:text-[46px]">
 
-            Meet{" "}
-            <span className="bg-gradient-to-r from-[#77c72b] via-[#50a916] to-[#278b16] bg-clip-text text-transparent">
-              Our Team
-            </span>
+            {site.team.heroTitle}
 
           </h2>
 
 
           <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-[#525b6b] sm:text-base md:text-lg">
-            The people behind VoltCharge, driving a smarter
-            and cleaner EV future.
+            {site.team.title}
           </p>
 
         </motion.div>

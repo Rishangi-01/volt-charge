@@ -6,15 +6,12 @@ import { usePathname } from "next/navigation";
 import { Zap, Menu, X, FilePenLine, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import { site } from "@/data/index";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Our Services", href: "/services" },
-  { name: "How to Apply", href: "/how-to-apply" },
-  { name: "FAQs", href: "/faqs" },
-  { name: "Contact Us", href: "/contact-us" },
-];
+const navLinks = site.nav.links.map((link) => ({
+  name: link.label,
+  href: link.href,
+}));
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -37,7 +34,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-[0_2px_15px_rgba(0,0,0,0.06)]">
-      <nav className="mx-auto flex h-[82px] max-w-[1920px] items-center justify-between px-5 sm:px-8 lg:h-[90px] lg:px-12 xl:px-14">
+      <nav className="mx-auto flex h-[82px] max-w-[1600px] px-5 sm:px-8 lg:px-14 items-center justify-between lg:h-[90px]">
         <Link
           href="/"
           aria-label="VoltCharge Home"
@@ -97,14 +94,14 @@ export default function Navbar() {
           whileTap={shouldReduceMotion ? {} : { scale: 0.96 }}
         >
           <Link
-            href="/apply-now"
+            href={site.nav.button.href}
             className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-green-600 to-green-700 px-8 py-[15px] text-[17px] font-bold text-white shadow-[0_5px_15px_rgba(22,163,74,0.18)] transition-all duration-300 hover:from-green-700 hover:to-green-800 hover:shadow-[0_8px_25px_rgba(22,163,74,0.3)] 2xl:px-10"
           >
             <FilePenLine
               size={25}
               className="transition-transform duration-300 group-hover:rotate-[-8deg]"
             />
-            Apply Now
+            {site.nav.button.label}
           </Link>
         </motion.div>
 
@@ -181,11 +178,11 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="/apply-now"
+                href={site.nav.button.href}
                 className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-green-600 to-green-700 px-6 py-4 text-base font-bold text-white shadow-lg shadow-green-600/20 transition-all duration-300 hover:from-green-700 hover:to-green-800"
               >
                 <FilePenLine size={22} />
-                Apply Now
+                {site.nav.button.label}
               </Link>
 
               <p className="mt-5 text-center text-xs font-medium tracking-wide text-gray-400">

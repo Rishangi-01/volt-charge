@@ -11,33 +11,15 @@ import {
 } from "framer-motion";
 
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { site } from "@/data/index";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Rohan Mehta",
-    designation: "EV Owner",
-    image: "/images/profile/avatar3.webp",
-    quote:
-      "The EV charging network is reliable, easy to use and available at convenient locations. It has made my daily commute smoother and more sustainable.",
-  },
-  {
-    id: 2,
-    name: "Priya Sharma",
-    designation: "EV Owner",
-    image: "/images/profile/avatar3.webp",
-    quote:
-      "Finding a reliable charging station has become so much easier. The charging experience is smooth, convenient and incredibly user-friendly.",
-  },
-  {
-    id: 3,
-    name: "Amit Verma",
-    designation: "Business Partner",
-    image: "/images/profile/avatar3.webp",
-    quote:
-      "Their EV charging solutions have helped us move towards a greener future. The service quality and support have been excellent.",
-  },
-];
+const testimonials = site.testimonials.items.map((item, index) => ({
+  id: index + 1,
+  name: item.name,
+  designation: item.treatment,
+  image: item.image,
+  quote: item.quote,
+}));
 
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -82,7 +64,7 @@ export default function TestimonialsSection() {
 
       </div>
 
-      <div className="relative mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
         <div className="grid grid-cols-1 items-start gap-10 pt-16 sm:pt-20 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 lg:pt-[85px]">
 
@@ -106,17 +88,17 @@ export default function TestimonialsSection() {
               <span className="h-[4px] w-9 rounded-full bg-[#65e900]" />
 
               <span className="text-xs font-bold uppercase tracking-wide text-white sm:text-sm">
-                Client Testimonials
+                {site.testimonials.eyebrow}
               </span>
 
             </div>
 
             <h2 className="max-w-[450px] text-[36px] font-extrabold leading-[1.17] tracking-tight text-white sm:text-[42px] lg:text-[44px]">
 
-              What Our Clients
+              {site.testimonials.title}
 
               <span className="mt-1 block text-[#67e900]">
-                Say About Us
+                {site.testimonials.highlight}
               </span>
 
             </h2>

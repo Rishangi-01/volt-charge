@@ -150,7 +150,7 @@ export default function ApplyNowForm() {
 
       <div className="pointer-events-none absolute -right-32 bottom-10 h-72 w-72 rounded-full bg-lime-100/30 blur-[110px]" />
 
-      <div className="relative mx-auto max-w-[1150px] px-5 sm:px-8 lg:px-10">
+      <div className="relative mx-auto max-w-[1150px] px-5 sm:px-8 lg:px-14">
 
      
 

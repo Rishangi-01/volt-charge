@@ -53,7 +53,7 @@ export default function ServicesBanner({
       <div className="pointer-events-none absolute -left-32 top-1/2 -z-10 h-80 w-80 -translate-y-1/2 rounded-full bg-[#36b519]/10 blur-[100px]" />
 
 
-      <div className="relative mx-auto w-full max-w-[1450px] px-5 py-16 sm:px-8 lg:px-12">
+      <div className="relative mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-14 py-16">
 
         <motion.div
           initial={

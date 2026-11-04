@@ -9,24 +9,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperInstance } from "swiper";
 import "swiper/css";
+import { site } from "@/data/index";
 
 const missionSlides = [
   {
     title: "Our Mission",
-    description:
-      "Driving a sustainable future through accessible, reliable and smarter EV charging solutions.",
+    description: site.about.pageParagraphs[0],
     icon: Target,
   },
   {
     title: "Accessible Charging",
-    description:
-      "Making EV charging more accessible and convenient for everyone.",
+    description: site.about.pageParagraphs[1],
     icon: Zap,
   },
   {
     title: "A Sustainable Future",
-    description:
-      "Supporting cleaner transportation with innovative electric vehicle charging solutions.",
+    description: site.about.pageParagraphs[2],
     icon: Target,
   },
 ];
@@ -83,7 +81,7 @@ const AboutSection = () => {
       id="about"
       className="relative overflow-hidden bg-white py-8 sm:py-12 lg:py-12 w-[100%]"
     >
-      <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
 
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16 xl:gap-20">
 

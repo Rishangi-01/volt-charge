@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
+import { site } from "@/data/index";
 
 import { MapPin, Mail, ArrowUpRight } from "lucide-react";
 import {
@@ -14,61 +15,49 @@ import {
 } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa6";
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Our Services", href: "/services" },
-  { name: "How To Apply", href: "/how-to-apply" },
-  { name: "Faqs", href: "/faqs" },
-  { name: "Contact Us", href: "/contact-us" },
-];
+const socialIconMap = {
+  instagram: FaInstagram,
+  youtube: FaInstagram,
+  facebook: FaFacebookF,
+  twitter: FaTwitter,
+  linkedin: FaLinkedinIn,
+};
 
-const socialLinks = [
-  {
-    name: "Facebook",
-    href: "https://facebook.com",
-    icon: FaFacebookF,
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com",
-    icon: FaTwitter,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: FaLinkedinIn,
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com",
-    icon: FaInstagram,
-  },
-];
+const navigation =
+  site.footer.columns.find((column) => column.source === "links")?.links.map((link) => ({
+    name: link.label,
+    href: link.href,
+  })) ?? site.nav.links.map((link) => ({ name: link.label, href: link.href }));
+
+const socialLinks = site.site.socials.map((social) => ({
+  name: social.label,
+  href: social.href,
+  icon: socialIconMap[social.icon as keyof typeof socialIconMap] ?? FaInstagram,
+}));
 
 const contactInfo = [
   {
     title: "Our Address",
     description: (
       <>
-        123 Design Avenue,
-        <br className="hidden sm:block" /> New York, NY 10001, USA
+        {site.site.addressLines[0]}
+        <br className="hidden sm:block" /> {site.site.addressLines[1]}
       </>
     ),
     icon: MapPin,
-    href: "https://maps.google.com/?q=123+Green+Energy+Avenue",
+    href: `https://maps.google.com/?q=${encodeURIComponent(site.site.addressLines.join(", "))}`,
   },
   {
     title: "Email Us",
-    description: "info@xyz.com",
+    description: site.site.emails[0],
     icon: Mail,
-    href: "mailto:info@xyz.com",
+    href: `mailto:${site.site.emails[0]}`,
   },
   {
     title: "Call us:",
-    description: "+1 000000000",
+    description: site.site.phones[0],
     icon: FaPhoneAlt,
-    href: "tel:+1 000000000",
+    href: `tel:${site.site.phones[0]}`,
   },
 ];
 
@@ -92,7 +81,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-[#101116] text-white w-[100%]">
       <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-[#3ebd16]/[0.06] blur-[100px]" />
 
-      <div className="relative mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-14">
         <div className="grid grid-cols-1 gap-12 py-12 sm:py-14 lg:grid-cols-[1fr_1.5fr] lg:gap-20 lg:py-14">
           <motion.div
             initial="hidden"
