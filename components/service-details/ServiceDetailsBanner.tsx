@@ -16,7 +16,7 @@ interface PageBannerProps {
 
 export default function ServiceDetailsBanner({
   title = "Service Details",
-  backgroundImage = "/images/banner.png",
+  backgroundImage = "/images/banner.webp",
   breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },

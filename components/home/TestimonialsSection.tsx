@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
       <div className="absolute inset-x-0 top-0 h-[370px] overflow-hidden sm:h-[390px] lg:h-[395px]">
 
         <Image
-          src="/images/home/testimonial-bg.png"
+          src="/images/home/testimonial-bg.webp"
           alt="Electric vehicles at a charging station"
           fill
           priority

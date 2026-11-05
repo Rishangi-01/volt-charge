@@ -96,7 +96,7 @@ export default function Footer() {
               className="relative z-10 flex h-12 w-[148px] shrink-0 items-center justify-center transition-transform duration-300 hover:scale-[1.03] lg:h-16 sm:w-[184px]"
             >
               <Image
-                src="/images/white-logo.png"
+                src="/images/white-logo.webp"
                 alt={"VoltCharge Logo"}
                 fill
                 sizes="184px"

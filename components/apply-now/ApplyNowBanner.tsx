@@ -16,7 +16,7 @@ interface PageBannerProps {
 
 export default function ApplyNowBanner({
   title = "Apply Now",
-  backgroundImage = "/images/banner.png",
+  backgroundImage = "/images/banner.webp",
   breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Apply Now" },

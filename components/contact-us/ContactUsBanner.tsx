@@ -16,7 +16,7 @@ interface PageBannerProps {
 
 export default function ContactUsBanner({
   title = "Contact Us",
-  backgroundImage = "/images/banner.png",
+  backgroundImage = "/images/banner.webp",
   breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Contact Us" },

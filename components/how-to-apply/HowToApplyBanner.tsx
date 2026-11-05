@@ -16,7 +16,7 @@ interface PageBannerProps {
 
 export default function HowToApplyBanner({
   title = "How to Apply",
-  backgroundImage = "/images/banner.png",
+  backgroundImage = "/images/banner.webp",
   breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "How to Apply" },

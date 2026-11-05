@@ -253,7 +253,7 @@ export default function WhyChooseUs() {
               className="absolute bottom-0 z-10 flex h-full w-full items-end justify-center"
             >
               <Image
-                src="/images/home/ev-charger-center.png"
+                src="/images/home/ev-charger-center.webp"
                 alt="VoltCharge EV charging station"
                 width={480}
                 height={600}

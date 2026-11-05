@@ -976,13 +976,13 @@
       "Site": {
         "variants": {
           "InsuranceSite1": {
-            "bgImage": "/images/home/testimonial-bg.png",
+            "bgImage": "/images/home/testimonial-bg.webp",
             "alt": "VoltCharge",
             "name": "VoltCharge",
             "description": "Electric Vehicle Charging Solutions",
-            "logo": "/images/logo.jpg",
-            "logoWhite": "/images/white-logo.png",
-            "heroImage": "/images/home/ev-hero-main.png",
+            "logo": "/images/logo.webp",
+            "logoWhite": "/images/white-logo.webp",
+            "heroImage": "/images/home/ev-hero-main.webp",
             "heroImageAlt": "Electric vehicle charging at a modern EV station",
             "metadata": {
               "title": "VoltCharge",
@@ -1010,7 +1010,7 @@
               "+1 000000000"
             ],
             "callLabel": "Call Us",
-            "bannerImage": "/images/home/ev-hero-main.png",
+            "bannerImage": "/images/home/ev-hero-main.webp",
             "socials": [
               {
                 "icon": "facebook",
@@ -1097,7 +1097,7 @@
                   "Drive a Cleaner Tomorrow"
                 ],
                 "text": "Electric Vehicle Charging Solutions",
-                "image": "/images/home/ev-hero-main.png",
+                "image": "/images/home/ev-hero-main.webp",
                 "imageAlt": "Electric vehicle charging at a modern EV station"
               },
               {
@@ -1107,7 +1107,7 @@
                   "For a Greener Future"
                 ],
                 "text": "Powering homes, businesses and public spaces with reliable EV charging infrastructure.",
-                "image": "/images/home/about-main.png",
+                "image": "/images/home/about-main.webp",
                 "imageAlt": "Modern VoltCharge EV charging station"
               },
               {
@@ -1117,7 +1117,7 @@
                   "Solutions"
                 ],
                 "text": "Charging options designed for a smoother, greener and more convenient driving experience.",
-                "image": "/images/home/charging-setup.png",
+                "image": "/images/home/charging-setup.webp",
                 "imageAlt": "EV charging setup and infrastructure"
               }
             ]
@@ -1177,9 +1177,9 @@
             "eyebrow": "About Us",
             "title": "Crafting The Ultimate",
             "highlight": "Realm Of EV",
-            "mainImage": "/images/home/about-main.png",
+            "mainImage": "/images/home/about-main.webp",
             "mainImageAlt": "Modern VoltCharge EV charging station",
-            "familyImage": "/images/home/about-charger-1.png",
+            "familyImage": "/images/home/about-charger-1.webp",
             "familyImageAlt": "Outdoor EV charging stations",
             "homeText": "We are committed to transforming the future of transportation through innovative electric vehicle charging solutions. Our mission is to make EV charging more accessible, convenient, and sustainable for everyone.",
             "experience": {
@@ -1220,14 +1220,14 @@
                 "label": "Discover our approach",
                 "href": "/services"
               },
-              "image": "/images/home/about-main.png",
+              "image": "/images/home/about-main.webp",
               "imageAlt": "Modern VoltCharge EV charging station"
             },
             "values": {
               "eyebrow": "Why Choose Us",
               "title": "Powering a Better EV Charging Experience",
               "text": "We combine innovation, reliability and sustainability to deliver charging solutions that match the pace of modern life.",
-              "image": "/images/home/about-charger-2.png",
+              "image": "/images/home/about-charger-2.webp",
               "imageAlt": "Electric car at a charging station"
             }
           }
@@ -1241,7 +1241,7 @@
             "titleLine2": "EV Charging",
             "highlight": "Experience",
             "text": "We are committed to transforming the future of transportation through innovative electric vehicle charging solutions. Our mission is to make EV charging more accessible, convenient, and sustainable for everyone.",
-            "image": "/images/home/about-main.png",
+            "image": "/images/home/about-main.webp",
             "imageAlt": "Modern VoltCharge EV charging station",
             "items": [
               {
@@ -1308,7 +1308,7 @@
             "buttonLabel": "Explore Services",
             "serviceDetailsHref": "/services/service-details",
             "learnMoreLabelTemplate": "Learn more about {name}",
-            "homeImage": "/images/home/home-installation.png",
+            "homeImage": "/images/home/home-installation.webp",
             "homeImageAlt": "EV charger installation at a property",
             "homeServiceSlugs": [
               "fast-ev-charging",
@@ -1339,10 +1339,10 @@
                   "charging for",
                   "daily driving"
                 ],
-                "image": "/images/home/fast-charging.png",
-                "homeImage": "/images/home/fast-charging.png",
+                "image": "/images/home/fast-charging.webp",
+                "homeImage": "/images/home/fast-charging.webp",
                 "treatmentImageAlt": "Fast EV charging station",
-                "detailImage": "/images/home/fast-charging.png",
+                "detailImage": "/images/home/fast-charging.webp",
                 "relatedText": [
                   "Fast and reliable charging",
                   "for daily driving"
@@ -1367,10 +1367,10 @@
                   "for homes and",
                   "daily commuting"
                 ],
-                "image": "/images/home/ac-charging.png",
-                "homeImage": "/images/home/ac-charging.png",
+                "image": "/images/home/ac-charging.webp",
+                "homeImage": "/images/home/ac-charging.webp",
                 "treatmentImageAlt": "AC charging setup for EVs",
-                "detailImage": "/images/home/ac-charging.png",
+                "detailImage": "/images/home/ac-charging.webp",
                 "relatedText": [
                   "Efficient charging",
                   "for homes and offices"
@@ -1395,10 +1395,10 @@
                   "for busy",
                   "locations"
                 ],
-                "image": "/images/home/dc-charging.png",
-                "homeImage": "/images/home/dc-charging.png",
+                "image": "/images/home/dc-charging.webp",
+                "homeImage": "/images/home/dc-charging.webp",
                 "treatmentImageAlt": "DC charging station",
-                "detailImage": "/images/home/dc-charging.png",
+                "detailImage": "/images/home/dc-charging.webp",
                 "relatedText": [
                   "High-speed charging",
                   "for busy locations"
@@ -1423,10 +1423,10 @@
                   "for home",
                   "charging"
                 ],
-                "image": "/images/home/home-installation.png",
-                "homeImage": "/images/home/home-installation.png",
+                "image": "/images/home/home-installation.webp",
+                "homeImage": "/images/home/home-installation.webp",
                 "treatmentImageAlt": "Home EV charger installation",
-                "detailImage": "/images/home/home-installation.png",
+                "detailImage": "/images/home/home-installation.webp",
                 "relatedText": [
                   "Professional installation",
                   "for home charging"
@@ -1451,10 +1451,10 @@
                   "for businesses",
                   "and public spaces"
                 ],
-                "image": "/images/home/commercial-charging.png",
-                "homeImage": "/images/home/commercial-charging.png",
+                "image": "/images/home/commercial-charging.webp",
+                "homeImage": "/images/home/commercial-charging.webp",
                 "treatmentImageAlt": "Commercial EV charging setup",
-                "detailImage": "/images/home/commercial-charging.png",
+                "detailImage": "/images/home/commercial-charging.webp",
                 "relatedText": [
                   "Scalable infrastructure",
                   "for business spaces"
@@ -1478,10 +1478,10 @@
                   "Reliable maintenance",
                   "and support"
                 ],
-                "image": "/images/home/maintenance.png",
-                "homeImage": "/images/home/maintenance.png",
+                "image": "/images/home/maintenance.webp",
+                "homeImage": "/images/home/maintenance.webp",
                 "treatmentImageAlt": "EV charging station maintenance",
-                "detailImage": "/images/home/maintenance.png",
+                "detailImage": "/images/home/maintenance.webp",
                 "relatedText": [
                   "Reliable maintenance",
                   "and support"
@@ -1782,7 +1782,7 @@
               "Drive a Cleaner Tomorrow"
             ],
             "text": "Need help with charging setup, installation or business infrastructure? Talk to our team for a smarter, greener solution.",
-            "image": "/images/home/ev-hero-main.png",
+            "image": "/images/home/ev-hero-main.webp",
             "button": {
               "label": "Apply Now",
               "href": "/apply-now"
@@ -1815,10 +1815,10 @@
                   "everyday EV convenience"
                 ],
                 "text": "Explore practical ways EV chargers can improve speed, efficiency and convenience for modern driving.",
-                "image": "/images/home/about-main.png",
+                "image": "/images/home/about-main.webp",
                 "imageAlt": "Electric vehicle charging at a modern EV station",
                 "detail": {
-                  "image": "/images/home/about-main.png",
+                  "image": "/images/home/about-main.webp",
                   "imageAlt": "Electric vehicle charging at a modern EV station",
                   "comments": 3,
                   "intro": "Smart charging solutions help drivers power their vehicles more efficiently while reducing downtime and improving reliability.",
@@ -1855,10 +1855,10 @@
                   "for business spaces"
                 ],
                 "text": "Learn how scalable charging systems can support employees, customers and growing demand.",
-                "image": "/images/home/commercial-charging.png",
+                "image": "/images/home/commercial-charging.webp",
                 "imageAlt": "Commercial EV charging setup",
                 "detail": {
-                  "image": "/images/home/commercial-charging.png",
+                  "image": "/images/home/commercial-charging.webp",
                   "imageAlt": "Commercial EV charging setup",
                   "comments": 2,
                   "intro": "Commercial charging stations create a more convenient experience for drivers while supporting sustainability goals.",
@@ -2387,7 +2387,7 @@
               {
                 "name": "John Doe",
                 "role": "Care Coordinator",
-                "image": "/images/team/team1.webp",
+                "image": "/images/profile/chandler.webp",
                 "imageAlt": "John Doe, Care Coordinator",
                 "href": "/teams",
                 "linkLabel": "Contact us about John Doe"
@@ -2395,7 +2395,7 @@
               {
                 "name": "Jane Smith",
                 "role": "Registered Nurse",
-                "image": "/images/team/team2.webp",
+                "image": "/images/profile/michael.webp",
                 "imageAlt": "Jane Smith, Registered Nurse",
                 "href": "/teams",
                 "linkLabel": "Contact us about Jane Smith"
@@ -2403,7 +2403,7 @@
               {
                 "name": "David Brown",
                 "role": "Home Health Aide",
-                "image": "/images/team/team3.webp",
+                "image": "/images/profile/ava.webp",
                 "imageAlt": "David Brown, Home Health Aide",
                 "href": "/teams",
                 "linkLabel": "Contact us about David Brown"
@@ -2411,7 +2411,7 @@
               {
                 "name": "Selina Kim",
                 "role": "Home Health Aide",
-                "image": "/images/team/team4.webp",
+                "image": "/images/profile/isabella.webp",
                 "imageAlt": "Selina Kim, Home Health Aide",
                 "href": "/teams",
                 "linkLabel": "Contact us about Selina Kim"

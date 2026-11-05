@@ -99,7 +99,7 @@ export default function HeroSection() {
               className="absolute bottom-0 right-0 h-[78%] w-[96%] overflow-hidden rounded-[24px] border-[5px] border-white shadow-2xl sm:h-[82%] lg:right-0 lg:h-[88%] lg:w-[98%]"
             >
               <Image
-                src="/images/home/ev-hero-main.png"
+                src="/images/home/ev-hero-main.webp"
                 alt="Electric vehicle charging at a modern EV station"
                 fill
                 priority
@@ -127,7 +127,7 @@ export default function HeroSection() {
               className="absolute right-0 top-0 z-20 h-[205px] w-[205px] overflow-hidden rounded-[25px] border-[5px] border-white bg-white shadow-2xl sm:right-0 sm:h-[245px] sm:w-[245px] lg:-right-4 lg:top-0 lg:h-[260px] lg:w-[275px]"
             >
               <Image
-                src="/images/home/ev-charger-detail.png"
+                src="/images/home/ev-charger-detail.webp"
                 alt="Modern EV charging station"
                 fill
                 sizes="(max-width: 768px) 205px, 275px"

@@ -41,7 +41,7 @@ export default function Navbar() {
           className="relative z-10 flex h-12 w-[148px] shrink-0 items-center justify-center transition-transform duration-300 hover:scale-[1.03] lg:h-16 lg:w-[214px]"
         >
             <Image
-              src="/images/logo.jpg"
+              src="/images/logo.webp"
               alt={"VoltCharge Logo"}
               fill
               sizes="184px"

@@ -10,7 +10,7 @@ const steps = site.process.steps.map((step, index) => ({
   number: String(index + 1).padStart(2, "0"),
   title: step.title,
   description: step.text,
-  image: "/images/home/installation.png",
+  image: "/images/home/installation.webp",
   imageAlt: step.title,
 }));
 

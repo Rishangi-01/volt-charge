@@ -117,7 +117,7 @@ const AboutSection = () => {
             <div className="relative h-[510px] w-full overflow-hidden rounded-[22px] sm:h-[620px] lg:h-[750px]">
 
               <Image
-                src="/images/home/about-main.png"
+                src="/images/home/about-main.webp"
                 alt="Modern VoltCharge EV charging station"
                 fill
                 priority
@@ -310,7 +310,7 @@ const AboutSection = () => {
                 className="group relative h-[230px] overflow-hidden rounded-[22px] sm:h-[300px] lg:h-[350px]"
               >
                 <Image
-                  src="/images/home/about-charger-1.png"
+                  src="/images/home/about-charger-1.webp"
                   alt="Outdoor EV charging stations"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
@@ -329,7 +329,7 @@ const AboutSection = () => {
                 className="group relative h-[230px] overflow-hidden rounded-[22px] sm:h-[300px] lg:h-[350px]"
               >
                 <Image
-                  src="/images/home/about-charger-2.png"
+                  src="/images/home/about-charger-2.webp"
                   alt="Electric car at a charging station"
                   fill
                   sizes="(max-width: 768px) 50vw, 25vw"
