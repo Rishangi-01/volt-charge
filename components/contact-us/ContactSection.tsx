@@ -16,67 +16,47 @@ import {
   MapPin,
   ArrowRight,
   RotateCcw,
+  LucideMapPin,
 } from "lucide-react";
-import { site } from "@/data/index";
+import { contactPageData, site } from "@/data/index";
 
-const contactInfo = [
-  {
-    id: 1,
-    title: "Have any questions?",
-    value: site.site.phones[0],
-    href: `tel:${site.site.phones[0]}`,
-    icon: Phone,
-  },
-  {
-    id: 2,
-    title: "Write email",
-    value: site.site.emails[0],
-    href: `mailto:${site.site.emails[0]}`,
-    icon: Mail,
-  },
-  {
-    id: 3,
-    title: "Visit anytime",
-    value: site.site.addressLines.join(", "),
-    href: `https://maps.google.com/?q=${encodeURIComponent(site.site.addressLines.join(", "))}`,
-    icon: MapPin,
-  },
-];
+const inputFieldIconMap = {
+  user: User,
+  mail: Mail,
+  "message-square": MessageSquare,
+  phone: Phone,
+} as const;
 
-const inputFields = [
-  {
-    name: "name",
-    placeholder: "Full Name *",
-    type: "text",
-    icon: User,
-    required: true,
-    autoComplete: "name",
-  },
-  {
-    name: "email",
-    placeholder: "Email Address *",
-    type: "email",
-    icon: Mail,
-    required: true,
-    autoComplete: "email",
-  },
-  {
-    name: "subject",
-    placeholder: "Subject",
-    type: "text",
-    icon: MessageSquare,
-    required: false,
-    autoComplete: "off",
-  },
-  {
-    name: "phone",
-    placeholder: "Phone Number *",
-    type: "tel",
-    icon: Phone,
-    required: true,
-    autoComplete: "tel",
-  },
-];
+const contactItemIconMap = {
+  phone: Phone,
+  mail: Mail,
+  "map-pin": MapPin,
+} as const;
+
+const contactPage = contactPageData;
+
+const contactInfo = contactPage.contactItems.map((item) => ({
+  ...item,
+  value: item.value || site.site.addressLines.join(", "),
+  href:
+    item.href ||
+    (() => {
+      if (item.field === "phones") return `tel:${site.site.phones[0]}`;
+      if (item.field === "emails") return `mailto:${site.site.emails[0]}`;
+      return `https://maps.google.com/?q=${encodeURIComponent(site.site.addressLines.join(", "))}`;
+    })(),
+  icon: contactItemIconMap[item.icon as keyof typeof contactItemIconMap] || MapPin,
+}));
+
+const inputFields = contactPage.formFields.map((field) => ({
+  ...field,
+  icon: inputFieldIconMap[field.icon as keyof typeof inputFieldIconMap] || User,
+}));
+
+const messageField = {
+  ...contactPage.messageField,
+  ariaLabel: contactPage.messageField.ariaLabel || contactPage.messageField.placeholder,
+};
 
 const containerVariants = {
   hidden: {},
@@ -198,7 +178,7 @@ export default function ContactSection() {
               <span className="h-[4px] w-11 rounded-full bg-[#29951c]" />
 
               <span className="text-base font-extrabold text-[#111827] sm:text-xl">
-                Contact Us
+                {contactPage.sectionHeading}
               </span>
             </motion.div>
 
@@ -207,7 +187,7 @@ export default function ContactSection() {
               variants={fadeUp}
               className="mb-5 text-4xl font-extrabold leading-tight tracking-tight text-[#111827] sm:text-5xl lg:text-5xl xl:text-5xl"
             >
-              Feel Free to Write
+              {contactPage.formHeading}
             </motion.h3>
 
 
@@ -263,11 +243,11 @@ export default function ContactSection() {
                 />
 
                 <textarea
-                  name="message"
-                  required
+                  name={messageField.name}
+                  required={messageField.required}
                   rows={5}
-                  placeholder="Your Message *"
-                  aria-label="Your Message"
+                  placeholder={messageField.placeholder}
+                  aria-label={messageField.ariaLabel}
                   className="min-h-[150px] w-full resize-y rounded-xl border-2 border-[#e0e4ec] bg-white py-5 pl-14 pr-5 text-base font-medium leading-relaxed text-[#172033] outline-none transition-all duration-300 placeholder:text-[#344054] hover:border-green-200 focus:border-[#29951c] focus:bg-green-50/20 focus:shadow-[0_0_0_4px_rgba(41,149,28,0.07)] sm:min-h-[150px] sm:text-lg"
                 />
               </motion.div>
@@ -284,27 +264,13 @@ export default function ContactSection() {
                   whileTap={{ scale: 0.97 }}
                   className="group inline-flex min-h-[52px] items-center justify-center gap-4 rounded-xl bg-gradient-to-r from-[#299e12] to-[#17810b] px-7 py-4 text-base font-extrabold text-white shadow-[0_8px_22px_rgba(41,149,28,0.18)] transition-all duration-300 hover:shadow-[0_12px_30px_rgba(41,149,28,0.30)] sm:min-h-[60px] sm:px-10 sm:text-xl"
                 >
-                  Send Message
+                  {contactPage.submitButtonLabel}
 
                   <ArrowRight
                     size={25}
                     strokeWidth={2.5}
                     className="transition-transform duration-300 group-hover:translate-x-2"
                   />
-                </motion.button>
-
-
-                <motion.button
-                  type="reset"
-                  whileHover={reduceMotion ? {} : { scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl border-2 border-[#29951c] bg-white px-7 py-4 text-base font-bold text-[#258b18] transition-all duration-300 hover:bg-[#29951c] hover:text-white sm:min-h-[60px] sm:px-10 sm:text-xl"
-                >
-                  <RotateCcw
-                    size={19}
-                    className="transition-transform duration-500 group-hover:-rotate-180"
-                  />
-                  Reset
                 </motion.button>
               </motion.div>
 
@@ -316,8 +282,7 @@ export default function ContactSection() {
                   role="status"
                   className="mt-5 rounded-xl border border-green-200 bg-green-50 p-4 text-sm font-medium text-green-800"
                 >
-                  Your form is ready! Connect your backend API to
-                  deliver this message to your email.
+                  {contactPage.successMessage}
                 </motion.p>
               )}
 
@@ -342,7 +307,7 @@ export default function ContactSection() {
               <span className="h-[4px] w-11 rounded-full bg-[#29951c]" />
 
               <h3 className="text-xl font-extrabold text-[#111827] sm:text-2xl">
-                Get in Touch
+                {contactPage.asideHeading}
               </h3>
             </motion.div>
 
@@ -391,29 +356,59 @@ export default function ContactSection() {
 
             </div>
 
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-12 rounded-2xl border border-green-100 bg-gradient-to-r from-green-50 to-white p-6 sm:mt-16 sm:p-7"
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-2.5 w-2.5 animate-pulse rounded-full bg-[#29951c]" />
-
-                <span className="text-base font-bold text-[#218b19]">
-                  We're here to help!
-                </span>
-              </div>
-
-              <p className="mt-3 text-sm leading-relaxed text-[#596273] sm:text-base">
-                Have a project in mind? Let's discuss your EV
-                charging requirements and build something great
-                together.
-              </p>
-            </motion.div>
-
           </motion.aside>
 
         </div>
+
+              <section>
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7 }}
+          className="group relative my-12 h-[250px]
+            overflow-hidden border border-[#e5ddd0]
+            bg-[#e9e6de] sm:mt-16 sm:h-[320px]
+            lg:my-16 lg:h-[350px]"
+        >
+          <iframe
+            title={`Map showing ${contactPage.location.mapAddress}`}
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(contactPage.location.mapAddress)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+            width="100%"
+            height="100%"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="absolute inset-0 h-full w-full
+              grayscale-[0.45] transition-all duration-700
+              group-hover:grayscale-0"
+          />
+
+          <div
+            className="pointer-events-none absolute
+            bottom-4 left-4 right-4 z-10 flex
+            max-w-[320px] items-center gap-3
+            border border-white/60 bg-[#faf8f3]/95
+            p-4 shadow-lg backdrop-blur-md sm:bottom-6 sm:left-6"
+          >
+            <div
+              className="flex h-10 w-10 shrink-0
+              items-center justify-center bg-[#11110f] text-white"
+            >
+              <LucideMapPin size={19} />
+            </div>
+
+            <div>
+              <p className="text-base">
+                {contactPage.location.mapTitle}
+              </p>
+              <p className="mt-1 text-xs text-[#81776b]">
+                {contactPage.location.mapAddress}
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       </div>
     </section>
   );

@@ -1958,6 +1958,11 @@
             ],
             "highlight": "",
             "text": "We'd love to hear from you. Send us a message and let's start a conversation.",
+            "sectionHeading": "Contact Us",
+            "formHeading": "Feel Free to Write",
+            "asideHeading": "Get in Touch",
+            "submitButtonLabel": "Send Message",
+            "successMessage": "Your form is ready! Connect your backend API to deliver this message to your email.",
             "cards": [
               {
                 "icon": "phone-solid",
@@ -1975,6 +1980,72 @@
                 "field": "address"
               }
             ],
+            "contactItems": [
+              {
+                "id": 1,
+                "title": "Have any questions?",
+                "field": "phones",
+                "value": "+1 000000000",
+                "icon": "phone",
+                "href": "tel:+1 000000000"
+              },
+              {
+                "id": 2,
+                "title": "Write email",
+                "field": "emails",
+                "value": "info@xyz.com",
+                "icon": "mail",
+                "href": "mailto:info@xyz.com"
+              },
+              {
+                "id": 3,
+                "title": "Visit anytime",
+                "field": "address",
+                "value": "123 Design Avenue, New York, NY 10001, USA",
+                "icon": "map-pin",
+                "href": "https://maps.google.com/?q=123%20Design%20Avenue%2C%20New%20York%2C%20NY%2010001%2C%20USA"
+              }
+            ],
+            "formFields": [
+              {
+                "name": "name",
+                "placeholder": "Full Name *",
+                "type": "text",
+                "icon": "user",
+                "required": true,
+                "autoComplete": "name"
+              },
+              {
+                "name": "email",
+                "placeholder": "Email Address *",
+                "type": "email",
+                "icon": "mail",
+                "required": true,
+                "autoComplete": "email"
+              },
+              {
+                "name": "subject",
+                "placeholder": "Subject",
+                "type": "text",
+                "icon": "message-square",
+                "required": false,
+                "autoComplete": "off"
+              },
+              {
+                "name": "phone",
+                "placeholder": "Phone Number *",
+                "type": "tel",
+                "icon": "phone",
+                "required": true,
+                "autoComplete": "tel"
+              }
+            ],
+            "messageField": {
+              "name": "message",
+              "placeholder": "Your Message *",
+              "required": true,
+              "ariaLabel": "Your Message"
+            },
             "formTitle": "Contact",
             "formHighlight": "Us",
             "formText": "We'd love to hear from you. Send us a message and let's start a conversation.",
@@ -1982,7 +2053,9 @@
               "mapCard": {
                 "title": "Visit Us",
                 "field": "address"
-              }
+              },
+              "mapAddress": "742 Evergreen Terrace (or 123 Main St), Springfield, IL (Illinois), 62704, United States",
+              "mapTitle": "Visit Us"
             },
             "hero": {
               "breadcrumbLabel": "Breadcrumb",

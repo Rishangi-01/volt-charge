@@ -43,7 +43,7 @@ export default function HeroSection() {
                 },
               },
             }}
-            className="relative z-20 max-w-[700px]"
+            className="relative z-20 max-w-[700px] lg:mb-[8rem]"
           >
 
 
@@ -62,7 +62,7 @@ export default function HeroSection() {
 
             <motion.h1
               variants={fadeUp}
-              className="text-[clamp(42px,5.4vw,82px)] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#06251e]"
+              className="text-[clamp(42px,5.4vw,81px)] font-extrabold leading-[1.08] tracking-[-0.045em] text-[#06251e]"
             >
               Charge Your EV,
               <br />

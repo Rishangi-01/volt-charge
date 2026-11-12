@@ -183,7 +183,7 @@ export default function WhyChooseUs() {
                   </h3>
 
 
-                  <div className="absolute left-[calc(100%+8px)] top-1/2 hidden h-px w-[90px] bg-gradient-to-r from-gray-300 to-gray-400 md:block lg:w-[125px]" />
+                  <div className="absolute left-[calc(100%+8px)] top-1/2 hidden h-[2px] w-[90px] bg-gradient-to-r from-gray-300 to-gray-400 md:block lg:w-[125px]" />
 
 
                   <div className="absolute left-[calc(100%+94px)] top-1/2 z-10 hidden h-4 w-4 -translate-y-1/2 rounded-full border-[4px] border-white bg-[#52ca16] shadow-[0_0_0_2px_rgba(82,202,22,0.12)] md:block lg:left-[calc(100%+120px)]" />
@@ -288,7 +288,7 @@ export default function WhyChooseUs() {
                 >
 
           
-                  <div className="absolute right-[calc(100%+8px)] top-1/2 hidden h-px w-[90px] bg-gradient-to-l from-gray-300 to-gray-400 md:block lg:w-[125px]" />
+                  <div className="absolute right-[calc(100%+8px)] top-1/2 hidden h-[2px] w-[90px] bg-gradient-to-l from-gray-300 to-gray-400 md:block lg:w-[125px]" />
 
           
                   <div className="absolute right-[calc(100%+94px)] top-1/2 z-10 hidden h-4 w-4 translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-white bg-[#52ca16] shadow-[0_0_0_2px_rgba(82,202,22,0.12)] md:block lg:right-[calc(100%+120px)]" />
