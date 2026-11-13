@@ -66,16 +66,6 @@ export default function FAQSection() {
           transition={{ duration: 0.8 }}
           className="mb-8 text-center sm:mb-12 lg:mb-12"
         >
-        
-          <div className="mb-5 flex items-center justify-center gap-4">
-            <span className="h-[3px] w-10 rounded-full bg-[#278d19] sm:w-12" />
-
-            <span className="text-sm font-extrabold uppercase tracking-[0.15em] text-[#172033] sm:text-base">
-              {site.faq.title}
-            </span>
-
-            <span className="h-[3px] w-10 rounded-full bg-[#278d19] sm:w-12" />
-          </div>
 
         
           <h2
