@@ -41,7 +41,7 @@ export default function TeamSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-8 sm:py-12 lg:py-12 w-[100%]">
+    <section className="relative overflow-hidden bg-white py-8 sm:py-8 lg:py-8 w-[100%]">
 
       
       <div className="pointer-events-none absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-green-100/30 blur-[100px]" />

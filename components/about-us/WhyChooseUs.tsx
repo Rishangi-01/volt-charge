@@ -84,7 +84,7 @@ export default function WhyChooseUs() {
   );
 
   return (
-    <section className="relative overflow-hidden bg-white py-8 sm:py-12 lg:py-12 w-[100%]">
+    <section className="relative overflow-hidden bg-white py-8 sm:py-8 lg:py-8 w-[100%]">
 
       
       <div className="pointer-events-none absolute left-1/2 top-40 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-green-100/30 blur-[100px]" />
@@ -97,7 +97,7 @@ export default function WhyChooseUs() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={fadeUp}
-          className="relative z-10 mb-12 text-center sm:mb-16"
+          className="relative z-10 mb-8 text-center sm:mb-8"
         >
       
           <div className="mb-4 flex items-center justify-center gap-3">
@@ -209,10 +209,10 @@ export default function WhyChooseUs() {
                 duration: 1.1,
                 ease: "easeOut",
               }}
-              className="absolute bottom-[10%] left-1/2 h-[90%] w-[72%] max-w-[310px] -translate-x-1/2 origin-bottom rounded-t-[180px] bg-gradient-to-b from-[#4fc900] via-[#a9e879] to-white"
+              className="absolute bottom-[10%] left-1/2 h-[85%] w-[72%] max-w-[310px] -translate-x-1/2 origin-bottom rounded-t-[180px] bg-gradient-to-b from-[#4fc900] via-[#a9e879] to-white"
             />
 
-            <div className="absolute bottom-[10%] left-1/2 h-[78%] w-[65%] -translate-x-1/2 rounded-t-[160px] bg-gradient-to-b from-white/25 to-transparent" />
+            <div className="absolute bottom-[10%] left-1/2 h-[75%] w-[65%] -translate-x-1/2 rounded-t-[160px] bg-gradient-to-b from-white/25 to-transparent" />
 
             <motion.div
               initial={
