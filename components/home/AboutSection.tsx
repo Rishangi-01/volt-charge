@@ -146,7 +146,7 @@ const AboutSection = () => {
               whileHover={
                 shouldReduceMotion ? {} : { y: -8 }
               }
-              className="absolute -bottom-5 left-5 z-30 w-[calc(100%-40px)] max-w-[350px] overflow-hidden rounded-[28px] border-[4px] border-white bg-gradient-to-br from-[#168a50] via-[#087c35] to-[#07551f] px-6 py-8 text-white shadow-[0_20px_55px_rgba(0,70,30,0.28)] sm:-bottom-8 sm:left-12 sm:px-9 sm:py-10"
+              className="absolute -bottom-5 left-5 z-30 w-[calc(100%-40px)] max-w-[350px] overflow-hidden rounded-[28px] border-[4px] border-white bg-gradient-to-br from-[#168a50] via-[#087c35] to-[#07551f] px-6 py-8 text-white sm:-bottom-8 sm:left-12 sm:px-9 sm:py-10"
             >
 
               <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#8cff40]/20 blur-3xl" />
@@ -243,7 +243,6 @@ const AboutSection = () => {
               </div>
 
 
-              <div className="absolute -bottom-12 -left-10 h-32 w-52 rotate-[-15deg] rounded-full bg-white/5 blur-xl" />
             </motion.div>
 
           </motion.div>

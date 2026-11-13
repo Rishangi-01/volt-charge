@@ -44,7 +44,7 @@ export default function HowToApplySec() {
   return (
     <section
       id="how-to-apply"
-      className="relative overflow-hidden bg-white py-8 sm:py-16 lg:py-16 w-[100%]"
+      className="relative overflow-hidden bg-white pt-8 sm:pt-16 lg:pt-16 pb-8 sm:pb-8 lg:pb-8 w-[100%]"
     >
 
       <div className="pointer-events-none absolute -left-40 top-40 h-80 w-80 rounded-full bg-green-100/40 blur-[110px]" />

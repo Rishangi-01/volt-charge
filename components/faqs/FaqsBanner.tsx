@@ -15,7 +15,7 @@ interface PageBannerProps {
 }
 
 export default function FaqsBanner({
-  title = "Frequently Asked Questions",
+  title = "FAQs",
   backgroundImage = "/images/banner.webp",
   breadcrumbs = [
     { label: "Home", href: "/" },
